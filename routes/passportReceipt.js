@@ -3,7 +3,7 @@ import multer from "multer"
 import fs from "fs"
 import path from "path"
 import { PDFDocument } from "pdf-lib"
-import pdfPoppler from "pdf-poppler"
+// import pdfPoppler from "pdf-poppler"
 import Tesseract from "tesseract.js"
 
 const app = express()
@@ -65,7 +65,7 @@ app.post("/passport-receipt", upload.single("pdf"), async (req, res) => {
       page: 1
     }
 
-    await pdfPoppler.convert(firstPagePdf, options)
+    // await pdfPoppler.convert(firstPagePdf, options)
 
     const imagePath = path.join("uploads", "page-1.jpg")
 

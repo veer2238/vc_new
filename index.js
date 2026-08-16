@@ -9,7 +9,7 @@ import Reminder from './routes/Reminder.js';
 import Login from './routes/Login.js';
 import Addcustomer from './routes/AddCustomer.js';
 import countryRoutes from "./routes/country.js"
-import passportReceiptRoute from "./routes/passportReceipt.js"
+// import passportReceiptRoute from "./routes/passportReceipt.js"
 import ConsultationRoute from "./routes/ConsultationRoute.js";
 import ConsultationModalRoute from "./routes/ConsultationModalRoute.js";
 import ReviewRoute from "./routes/ReviewRoute.js";
@@ -45,7 +45,7 @@ app.use('/', Login);
 app.use('/', Reminder); 
 app.use('/', Addcustomer);
 app.use("/", countryRoutes)
-app.use("/", passportReceiptRoute)
+// app.use("/", passportReceiptRoute)
 app.use("/", ConsultationRoute);
 app.use("/", ConsultationModalRoute);
 app.use("/", ReviewRoute);
