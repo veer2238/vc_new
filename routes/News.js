@@ -34,6 +34,8 @@ app.post('/subscribe', async (req, res) => {
 
     const newSub = await Newsletter.create({ email });
 
+    console.log(newSub);
+
     // Set up nodemailer transporter
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -55,7 +57,7 @@ app.post('/subscribe', async (req, res) => {
     };
 
     // Send email
-    transporter.sendMail(mailOptions, (error, info) => {
+    const info = await transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.error('Error sending email:', error);
       } else {
@@ -63,7 +65,9 @@ app.post('/subscribe', async (req, res) => {
       }
     });
 
-    console.log(newSub);
+    console.log('Email sent:', info.response);
+
+    
 
     res.json({
       success: true,
