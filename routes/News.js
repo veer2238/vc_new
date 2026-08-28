@@ -17,13 +17,7 @@ const htmlContent = fs.readFileSync(emailTemplatePath, 'utf-8');
 
 const app = express();
 
-// Make uploaded files publicly accessible
-app.use(
-  '/uploads',
-  express.static(path.join(process.cwd(), 'uploads'))
-);
 
-// POST - Subscribe to newsletter
 app.post('/subscribe', async (req, res) => {
   try {
     const { email } = req.body;
