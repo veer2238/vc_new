@@ -65,7 +65,7 @@ app.post('/subscribe', async (req, res) => {
       }
     });
 
-    console.log('Email sent:', info.response);
+    
 
     
 
