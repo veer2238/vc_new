@@ -57,7 +57,7 @@ app.post('/subscribe', async (req, res) => {
     };
 
     // Send email
-    const info = await transporter.sendMail(mailOptions, (error, info) => {
+     await transporter.sendMail(mailOptions, (error, info) => {
       if (error) {
         console.error('Error sending email:', error);
       } else {
